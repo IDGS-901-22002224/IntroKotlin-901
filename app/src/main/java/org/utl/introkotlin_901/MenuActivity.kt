@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.utl.introkotlin_901.Cinepolis.CinepolisActivity
+import org.utl.introkotlin_901.Diccionario.DiccionarioActivity
 import org.utl.introkotlin_901.R.id
 import org.utl.introkotlin_901.R.id.btn1
 import org.utl.introkotlin_901.R.id.btn2
 import org.utl.introkotlin_901.R.id.btn3
+import org.utl.introkotlin_901.R.id.btn4
 import org.utl.introkotlin_901.ejemplo1.SumaActivity
 import org.utl.introkotlin_901.ejemplo2.SaludoActivity
 
@@ -24,11 +26,13 @@ class MenuActivity : AppCompatActivity() {
         val btnSaludo = findViewById<Button>(btn1)
         val btnCinepolis = findViewById<Button>(btn2)
         val btnnavegateToSalud2 = findViewById<Button>(btn3)
+        val btnnavegateToDiccionario = findViewById<Button>(btn4)
 
 
         btnSaludo.setOnClickListener {navegateToSaludo()}
         btnCinepolis.setOnClickListener {navegateToSaludoCinepolis()}
         btnnavegateToSalud2.setOnClickListener {navegateToSalud2()}
+        btnnavegateToDiccionario.setOnClickListener {navegateToDiccionario1()}
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -52,4 +56,8 @@ class MenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun navegateToDiccionario1() {
+        val intent = Intent(this, DiccionarioActivity::class.java)
+        startActivity(intent)
+    }
 }
